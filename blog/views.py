@@ -1,29 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 # Create your views here.
 
-# For now create a list of dictionaries which will contain the content of blog posts
-posts = [
-
-    {
-        'author': 'Kylie',
-        'title': 'Post 1',
-        'content': 'Yep content',
-        'date_posted': '5 November, 2021' # Pass a String for now
-    }, 
-    {
-        'author': 'Not Kylie',
-        'title': 'Post 2',
-        'content': 'Mudkips are cute',
-        'date_posted': '5 November, 2021' # Pass a String for now
-    }, 
-
-]
 
 #make a home page
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all() # We can access all posts created under the Post model with this
     }
 
     # Passing the context will allow us to use those values within the template.
