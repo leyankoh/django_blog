@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView, CreateView
 from django.http import HttpResponse
 from .models import Post
 # Create your views here.
@@ -16,3 +17,19 @@ def home(request):
 # make an about page
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+    # have our template loop over "posts" instead of "object_list" (as specified in the home views above)
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    # Introduce a view for detailed posts
+    # <app>/<model>_<viewtype>.html
+    # Generic class-based views will look for a template named like the above
+    # hence it will look for blog/post_detail.html by default
+
+    model = Post

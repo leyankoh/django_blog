@@ -2,9 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-# Create your models here.
-
-
 
 class Post(models.Model):
     # Create a model to contain our blog post data
@@ -24,6 +21,7 @@ class Post(models.Model):
     # user.post_set.all(): Lists all posts under the user
     # user.post_set.create(...): Creates a post under the "user" that you stored.
 
+    #createdOn and updatedOn recommended
     title = models.CharField(max_length=100) # Create a title field for the blog post
     content = models.TextField()
     
