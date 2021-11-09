@@ -11,17 +11,34 @@ body {
   ul {
     margin: 0;
   }
-  
+
+  .navbar {
+    position: absolute;
+    background-color: #3b3737 !important;
+  }
+
+  .bg-gradient {
+    /* fallback for old browsers */
+    background: #ff9a9e;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(255, 154, 158, 1), rgba(250, 208, 196, 1));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(255, 154, 158, 1), rgba(250, 208, 196, 1));
+
+  }
+
   .bg-steel {
     background-color: #5f788a;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #6d6d6d !important;
   }
   
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #3f3f3f !important;
   }
   
   .site-header .navbar-nav .nav-link.active {

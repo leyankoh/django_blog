@@ -7,12 +7,15 @@ from .models import Post
 
 #make a home page
 def home(request):
+    return render(request, 'blog/home.html')
+
+def blog(request):
     context = {
         'posts': Post.objects.all() # We can access all posts created under the Post model with this
     }
 
     # Passing the context will allow us to use those values within the template.
-    return render(request, 'blog/home.html', context) # render the html page in templates/blog/home.html
+    return render(request, 'blog/blog.html', context) # render the html page in templates/blog/home.html
 
 # make an about page
 def about(request):
@@ -21,7 +24,7 @@ def about(request):
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'
+    template_name = 'blog/blog.html'
     # have our template loop over "posts" instead of "object_list" (as specified in the home views above)
     context_object_name = 'posts'
     ordering = ['-date_posted']

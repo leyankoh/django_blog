@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -23,7 +24,8 @@ class Post(models.Model):
 
     #createdOn and updatedOn recommended
     title = models.CharField(max_length=100) # Create a title field for the blog post
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
+    # content = models.TextField()
     
     # auto_now updates the date of the post to the exact time it was modified
     date_posted = models.DateTimeField(default=timezone.now) 
