@@ -9,6 +9,8 @@
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.content|safe }}</p>
+            <input type=button class="back-btn" value="Back" onClick="javascript:history.go(-1);">
+
         </div>
     </article>
 {% endblock content %}
