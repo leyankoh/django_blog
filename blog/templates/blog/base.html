@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+  
 <head>
 
     <!-- Required meta tags -->
@@ -8,7 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.2/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.2/dist/js/uikit-icons.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
     {% if title %}
@@ -17,50 +24,38 @@
         <title>Django Blog</title>
     {% endif %}
 </head>
-<body>
-    <header class="site-header">
 
-      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-gradient">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-              <a class="nav-item nav-link" href="{% url 'blog-blog' %}">Blog</a>
-            </div>
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-              <a class="nav-item nav-link" href="#">Github</a>
-              <a class="nav-item nav-link" href="#">LinkedIn</a>
-            </div>
+
+<body>
+  <div class="uk-section" id="navigation-section" style="margin-bottom: -150px;">
+    <div class="uk-container uk-container-center uk-margin-top">
+      <header>
+        <nav class="uk-position-top uk-navbar-container uk-dark" id="bg-dark" uk-navbar>
+
+          <div class="uk-navbar-left" id="main-nav">
+            <ul class="uk-navbar-nav">
+                <li><a href="{% url 'blog-home' %}">Home</a></li>
+                <li><a href="{% url 'blog-about' %}">About</a></li>
+                <li><a href="{% url 'blog-blog' %}">Blog</a></li>
+            </ul>
           </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
+
+          <div class="uk-navbar-right" id="sub-nav">
+            <ul class="uk-navbar-nav">
+              <li><a uk-icon="icon: github" href="#"></a></li>
+              <li><a uk-icon="icon: linkedin" href="#"></a></li>
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+    </div> 
+  </div> 
+
+    <main role="main">
           {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
     </main>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

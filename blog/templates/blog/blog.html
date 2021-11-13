@@ -2,15 +2,26 @@
 
 {% block content %}
 {% for post in posts %}
-<article class="media content-section">
-    <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="#">{{ post.author }}</a>
-            <small class="text-muted">{{ post.date_posted|date:"d F, Y"}}</small>
-        </div>
-        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content|safe }}</p>
+<div class="uk-section uk-section-muted uk-width-auto" id="content-box">
+    <div class="uk-container uk-container-center"> 
+            <article class="uk-article">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <h2 class="uk-article-title"><a class="uk-link-reset" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                        <p class="uk-article-meta" id="meta">Written by <a href="#">{{ post.author }}</a> on {{ post.date_posted|date:"d F, Y"}}.</p>
+                        <hr>
+                    </div>
+                    <p class="article-content">{{ post.content|truncatewords:"100"|safe }}</p>
+
+                    <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                        <div>
+                            <a class="uk-button uk-button-text" href="{% url 'post-detail' post.id %}">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
     </div>
-</article>
+</div>
+
 {% endfor %}
 {% endblock content %}

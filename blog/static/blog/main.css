@@ -1,7 +1,20 @@
+html { 
+  background: url('https://i.imgur.com/mZoqNhu.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+  margin-top: 3rem;
+  color: #333333;
+  }
+
+
+  html, body {
+    margin: 0;
+    height: 100%;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -12,22 +25,85 @@ body {
     margin: 0;
   }
 
-  .navbar {
+
+  input.back-btn {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #494949;
+    background-color: #4eb5f100;
+    text-align: center;
+    transition: all 0.2s;
+    }
+
+    input.back-btn:hover {
+     background-color:#a5d6f3;
+    }
+
+  @media all and (max-width: 30em) {
+    input.back-tn {
+      display: block;
+      margin: 0.2em auto;
+    }
+  }
+
+  /* Navbar styling */
+  #bg-dark {
+    background-color: #292929;
+  }
+
+  #main-nav {
+    margin-left: 100px;
+  }
+
+  #sub-nav {
+    margin-right: 100px;
+  }
+
+  /* Home Page Styling */
+  #welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://i.imgur.com/EfKaWRp.jpg');
+    background-size: cover;
+  }
+
+
+  /* Content Styling */
+  #content-box {
+    background-color: rgba(244, 245, 245, 0.555);
+    height: 100%;
+  }
+
+  #meta {
+    color: rgb(41, 41, 41);
+  }
+  
+  #meta a {
+    color:rgb(80, 80, 80);
+  }
+
+  #meta a:hover {
+    color:rgb(24, 24, 24);
+  }
+
+
+  /* Old - To delete later
+
+    .navbar {
     position: absolute;
     background-color: #3b3737 !important;
     box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.274);
-  }
-
-  .bg-gradient {
-    /* fallback for old browsers */
-    background: #ff9a9e;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(255, 154, 158, 1), rgba(250, 208, 196, 1));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(255, 154, 158, 1), rgba(250, 208, 196, 1));
-
   }
 
   .bg-steel {
@@ -100,29 +176,4 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
-
-  input.back-btn {
-    display: inline-block;
-    padding: 0.3em 1.2em;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 2em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 300;
-    color: #494949;
-    background-color: #4eb5f100;
-    text-align: center;
-    transition: all 0.2s;
-    }
-
-    input.back-btn:hover {
-     background-color:#a5d6f3;
-    }
-
-  @media all and (max-width: 30em) {
-    input.back-tn {
-      display: block;
-      margin: 0.2em auto;
-    }
-  }
+  */
